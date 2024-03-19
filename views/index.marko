@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+   This file was auto-generated from the API references found at
+   https://apireference.connect.worldline-solutions.com/
+-->
+
+<head>
+  <title>Wordline Node.js S2S example</title>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <style>
+    .output-wrapper {
+      display: none;
+    }
+    ul.nav.nav-tabs {
+      margin-bottom: 15px;
+      margin-left: 15px;
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1>Node.js S2S SDK explorer</h1>
+        <p>You can explore the various calls of the Node.js S2S SDK by clicking the method in the menu; the response will
+          be rendered when the call finishes. This tool is for development use only and must never be made public.</p>
+      </div>
+    </div>
+    <div class="row">
+      <ul class="nav nav-tabs">
+        <li role="api" class="active">
+          <a href="#apiv1">API v1</a>
+        </li>
+      </ul>
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="apiv1">
+          <div class="col-xs-12 col-md-3">
+            <div class="panel-group" id="v1Accordion" role="tablist" aria-multiselectable="true">
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="v1HeadingHostedCheckouts">
+                  <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#v1Accordion" href="#v1CollapseHostedCheckouts" aria-expanded="true" aria-controls="v1CollapseHostedCheckouts">
+                      Hosted Checkouts
+                    </a>
+                  </h4>
+                </div>
+                <div id="v1CollapseHostedCheckouts" class="panel-collapse collapse" role="tabpanel" aria-labelledby="v1HeadingHostedCheckouts">
+                  <ul class="list-group">
+                    <li class="list-group-item"><a href="#" data-operation="v1CreateHostedCheckout">Create hosted checkout</a></li>
+                    <li class="list-group-item"><a href="#" data-operation="v1GetHostedCheckout">Get hosted checkout status</a></li>
+                    <li class="list-group-item"><a href="#" data-operation="v1DeleteHostedCheckout">Delete hosted checkout</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="v1HeadingHostedMandateManagement">
+                  <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#v1Accordion" href="#v1CollapseHostedMandateManagement" aria-expanded="true" aria-controls="v1CollapseHostedMandateManagement">
+                      Hosted Mandate Management
+                    </a>
+                  </h4>
+                </div>
+                <div id="v1CollapseHostedMandateManagement" class="panel-collapse collapse" role="tabpanel" aria-labelledby="v1HeadingHostedMandateManagement">
+                  <ul class="list-group">
+                    <li class="list-group-item"><a href="#" data-operation="v1CreateHostedMandateManagement">Create hosted mandate management</a></li>
+                    <li class="list-group-item"><a href="#" data-operation="v1GetHostedMandateManagement">Get hosted mandate management</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="v1HeadingPayments">
+                  <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#v1Accordion" href="#v1CollapsePayments" aria-expanded="true" aria-controls="v1CollapsePayments">
+                      Payments
+                    </a>
+                  </h4>
+                </div>
+                <div id="v1CollapsePayments" class="panel-collapse collapse" role="tabpanel" aria-labelledby="v1HeadingPayments">
+                  <ul class="list-group">
+                    <li class="list-group-item"><a href="#" data-operation="v1CreatePayment">Create payment</a></li>
+                    <li class="list-group-item"><a href="#" data-operation="v1FindPayments">Find payments</a></li>
+                    <li class="list-group-item"><a href="#" data-operation="v1GetPayment">Get payment</a></li>
+                    <li class="list-group-item"><a href="#" data-operation="v1CompletePayment">Complete payment</a></li>
+                    <li class="list-group-item"><a href="#" data-operation="v1GetThirdPartyStatus">Third party status</a></li>
+                    <li class="list-group-item"><a href="#" data-operation="v1TokenizePayment">Create a token from payment</a></li>
+                    <li class="list-group-item"><a href="#" data-operation="v1ProcessChallengedPayment">Approves challenged payment</a></li>
+                    <li class="list-group-item"><a href="#" data-operation="v1ApprovePayment">Approve payment</a></li>
+                    <li class="list-group-item"><a href="#" data-operation="v1CapturePayment">Capture payment</a></li>
+                    <li class="list-group-item"><a href="#" data-operation="v1CancelApprovalPayment">Undo capture payment request</a></li>
+                    <li class="list-group-item"><a href="#" data-operation="v1GetPaymentCaptures">Get captures of payment</a></li>
+                    <li class="list-group-item"><a href="#" data-operation="v1RefundPayment">Create refund</a></li>
+                    <li class="list-group-item"><a href="#" data-operation="v1GetRefunds">Get refunds of payment</a></li>
+                    <li class="list-group-item"><a href="#" data-operation="v1CancelPayment">Cancel payment</a></li>
+                    <li class="list-group-item"><a href="#" data-operation="v1CreatePaymentDispute">Create dispute</a></li>
+                    <li class="list-group-item"><a href="#" data-operation="v1GetPaymentDisputes">Get disputes</a></li>
+                    <li class="list-group-item"><a href="#" data-operation="v1GetPaymentDeviceFingerprintDetails">Get device fingerprint details</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="v1HeadingCaptures">
+                  <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#v1Accordion" href="#v1CollapseCaptures" aria-expanded="true" aria-controls="v1CollapseCaptures">
+                      Captures
+                    </a>
+                  </h4>
+                </div>
+                <div id="v1CollapseCaptures" class="panel-collapse collapse" role="tabpanel" aria-labelledby="v1HeadingCaptures">
+                  <ul class="list-group">
+                    <li class="list-group-item"><a href="#" data-operation="v1GetCapture">Get capture</a></li>
+                    <li class="list-group-item"><a href="#" data-operation="v1CreateRefundCapture">Create Refund</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="v1HeadingRefunds">
+                  <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#v1Accordion" href="#v1CollapseRefunds" aria-expanded="true" aria-controls="v1CollapseRefunds">
+                      Refunds
+                    </a>
+                  </h4>
+                </div>
+                <div id="v1CollapseRefunds" class="panel-collapse collapse" role="tabpanel" aria-labelledby="v1HeadingRefunds">
+                  <ul class="list-group">
+                    <li class="list-group-item"><a href="#" data-operation="v1FindRefunds">Find refunds</a></li>
+                    <li class="list-group-item"><a href="#" data-operation="v1GetRefund">Get refund</a></li>
+                    <li class="list-group-item"><a href="#" data-operation="v1ApproveRefund">Approve refund</a></li>
+                    <li class="list-group-item"><a href="#" data-operation="v1CancelRefund">Cancel refund</a></li>
+                    <li class="list-group-item"><a href="#" data-operation="v1CancelApprovalRefund">Undo approve refund</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="v1HeadingDisputes">
+                  <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#v1Accordion" href="#v1CollapseDisputes" aria-expanded="true" aria-controls="v1CollapseDisputes">
+                      Disputes
+                    </a>
+                  </h4>
+                </div>
+                <div id="v1CollapseDisputes" class="panel-collapse collapse" role="tabpanel" aria-labelledby="v1HeadingDisputes">
+                  <ul class="list-group">
+                    <li class="list-group-item"><a href="#" data-operation="v1GetDispute">Get Dispute</a></li>
+                    <li class="list-group-item"><a href="#" data-operation="v1SubmitDispute">Submit Dispute</a></li>
+                    <li class="list-group-item"><a href="#" data-operation="v1CancelDispute">Cancel Dispute</a></li>
+                    <li class="list-group-item"><a href="#" data-operation="v1UploadDisputeFile">Upload File</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="v1HeadingPayouts">
+                  <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#v1Accordion" href="#v1CollapsePayouts" aria-expanded="true" aria-controls="v1CollapsePayouts">
+                      Payouts
+                    </a>
+                  </h4>
+                </div>
+                <div id="v1CollapsePayouts" class="panel-collapse collapse" role="tabpanel" aria-labelledby="v1HeadingPayouts">
+                  <ul class="list-group">
+                    <li class="list-group-item"><a href="#" data-operation="v1CreatePayout">Create payout</a></li>
+                    <li class="list-group-item"><a href="#" data-operation="v1FindPayouts">Find payouts</a></li>
+                    <li class="list-group-item"><a href="#" data-operation="v1GetPayout">Get payout</a></li>
+                    <li class="list-group-item"><a href="#" data-operation="v1ApprovePayout">Approve payout</a></li>
+                    <li class="list-group-item"><a href="#" data-operation="v1CancelPayout">Cancel payout</a></li>
+                    <li class="list-group-item"><a href="#" data-operation="v1CancelApprovalPayout">Undo approve payout</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="v1HeadingProductGroups">
+                  <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#v1Accordion" href="#v1CollapseProductGroups" aria-expanded="true" aria-controls="v1CollapseProductGroups">
+                      Product Groups
+                    </a>
+                  </h4>
+                </div>
+                <div id="v1CollapseProductGroups" class="panel-collapse collapse" role="tabpanel" aria-labelledby="v1HeadingProductGroups">
+                  <ul class="list-group">
+                    <li class="list-group-item"><a href="#" data-operation="v1GetPaymentProductGroups">Get payment product groups</a></li>
+                    <li class="list-group-item"><a href="#" data-operation="v1GetPaymentProductGroup">Get payment product group</a></li>
+                    <li class="list-group-item"><a href="#" data-operation="v1GetDeviceFingerprintForGroups">Get device fingerprint</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="v1HeadingProducts">
+                  <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#v1Accordion" href="#v1CollapseProducts" aria-expanded="true" aria-controls="v1CollapseProducts">
+                      Products
+                    </a>
+                  </h4>
+                </div>
+                <div id="v1CollapseProducts" class="panel-collapse collapse" role="tabpanel" aria-labelledby="v1HeadingProducts">
+                  <ul class="list-group">
+                    <li class="list-group-item"><a href="#" data-operation="v1GetPaymentProducts">Get payment products</a></li>
+                    <li class="list-group-item"><a href="#" data-operation="v1GetPaymentProduct">Get payment product</a></li>
+                    <li class="list-group-item"><a href="#" data-operation="v1GetDirectory">Get payment product directory</a></li>
+                    <li class="list-group-item"><a href="#" data-operation="v1GetCustomerDetails">Get customer details</a></li>
+                    <li class="list-group-item"><a href="#" data-operation="v1GetDeviceFingerprint">Get device fingerprint</a></li>
+                    <li class="list-group-item"><a href="#" data-operation="v1GetNetworks">Get payment product networks</a></li>
+                    <li class="list-group-item"><a href="#" data-operation="v1CreatePaymentProductSession">Create payment product session</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="v1HeadingRiskAssessments">
+                  <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#v1Accordion" href="#v1CollapseRiskAssessments" aria-expanded="true" aria-controls="v1CollapseRiskAssessments">
+                      Risk assessments
+                    </a>
+                  </h4>
+                </div>
+                <div id="v1CollapseRiskAssessments" class="panel-collapse collapse" role="tabpanel" aria-labelledby="v1HeadingRiskAssessments">
+                  <ul class="list-group">
+                    <li class="list-group-item"><a href="#" data-operation="v1RiskAssessmentBankAccount">Risk-assess bankaccount</a></li>
+                    <li class="list-group-item"><a href="#" data-operation="v1RiskAssessmentCards">Risk-assess card</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="v1HeadingServices">
+                  <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#v1Accordion" href="#v1CollapseServices" aria-expanded="true" aria-controls="v1CollapseServices">
+                      Services
+                    </a>
+                  </h4>
+                </div>
+                <div id="v1CollapseServices" class="panel-collapse collapse" role="tabpanel" aria-labelledby="v1HeadingServices">
+                  <ul class="list-group">
+                    <li class="list-group-item"><a href="#" data-operation="v1ConvertAmount">Convert amount</a></li>
+                    <li class="list-group-item"><a href="#" data-operation="v1ConvertBankAccount">Convert bankaccount</a></li>
+                    <li class="list-group-item"><a href="#" data-operation="v1IINDetails">Get IIN details</a></li>
+                    <li class="list-group-item"><a href="#" data-operation="v1GetPrivacyPolicy">Get Privacy Policy</a></li>
+                    <li class="list-group-item"><a href="#" data-operation="v1TestConnection">Test connection</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="v1HeadingTokens">
+                  <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#v1Accordion" href="#v1CollapseTokens" aria-expanded="true" aria-controls="v1CollapseTokens">
+                      Tokens
+                    </a>
+                  </h4>
+                </div>
+                <div id="v1CollapseTokens" class="panel-collapse collapse" role="tabpanel" aria-labelledby="v1HeadingTokens">
+                  <ul class="list-group">
+                    <li class="list-group-item"><a href="#" data-operation="v1CreateToken">Create token</a></li>
+                    <li class="list-group-item"><a href="#" data-operation="v1GetToken">Get token</a></li>
+                    <li class="list-group-item"><a href="#" data-operation="v1UpdateToken">Update token</a></li>
+                    <li class="list-group-item"><a href="#" data-operation="v1DeleteToken">Delete token</a></li>
+                    <li class="list-group-item"><a href="#" data-operation="v1ApproveSepaDirectDebitToken">Approve SEPA DD mandate</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="v1HeadingMandates">
+                  <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#v1Accordion" href="#v1CollapseMandates" aria-expanded="true" aria-controls="v1CollapseMandates">
+                      Mandates
+                    </a>
+                  </h4>
+                </div>
+                <div id="v1CollapseMandates" class="panel-collapse collapse" role="tabpanel" aria-labelledby="v1HeadingMandates">
+                  <ul class="list-group">
+                    <li class="list-group-item"><a href="#" data-operation="v1CreateMandate">Create mandate</a></li>
+                    <li class="list-group-item"><a href="#" data-operation="v1CreateMandateWithReference">Create mandate with mandatereference</a></li>
+                    <li class="list-group-item"><a href="#" data-operation="v1GetMandate">Get mandate</a></li>
+                    <li class="list-group-item"><a href="#" data-operation="v1BlockMandate">Block mandate</a></li>
+                    <li class="list-group-item"><a href="#" data-operation="v1UnblockMandate">Unblock mandate</a></li>
+                    <li class="list-group-item"><a href="#" data-operation="v1RevokeMandate">Revoke mandate</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="v1HeadingSessions">
+                  <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#v1Accordion" href="#v1CollapseSessions" aria-expanded="true" aria-controls="v1CollapseSessions">
+                      Sessions
+                    </a>
+                  </h4>
+                </div>
+                <div id="v1CollapseSessions" class="panel-collapse collapse" role="tabpanel" aria-labelledby="v1HeadingSessions">
+                  <ul class="list-group">
+                    <li class="list-group-item"><a href="#" data-operation="v1CreateSession">Create session</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="v1HeadingInstallments">
+                  <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#v1Accordion" href="#v1CollapseInstallments" aria-expanded="true" aria-controls="v1CollapseInstallments">
+                      Installments
+                    </a>
+                  </h4>
+                </div>
+                <div id="v1CollapseInstallments" class="panel-collapse collapse" role="tabpanel" aria-labelledby="v1HeadingInstallments">
+                  <ul class="list-group">
+                    <li class="list-group-item"><a href="#" data-operation="v1GetInstallmentsInfo">Get installment information</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="v1HeadingFiles">
+                  <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#v1Accordion" href="#v1CollapseFiles" aria-expanded="true" aria-controls="v1CollapseFiles">
+                      Files
+                    </a>
+                  </h4>
+                </div>
+                <div id="v1CollapseFiles" class="panel-collapse collapse" role="tabpanel" aria-labelledby="v1HeadingFiles">
+                  <ul class="list-group">
+                    <li class="list-group-item"><a href="#" data-operation="v1GetFile">Get File</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-md-9 output-wrapper">
+            <p>Status: <span id="v1OutputStatusCode"></span>, Roundtrip: <span id="v1RoundTrip"></span> ms</p>
+            <pre id="v1Output"></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" tabindex="-1" role="dialog" id="themodal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Enter input</h4>
+        </div>
+        <div class="modal-body">
+          <form class="form-horizontal" id="inputs">
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="sendOverlay">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="//code.jquery.com/jquery-2.2.2.min.js" integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI=" crossorigin="anonymous"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script>
+    $(function () {
+      $("ul.nav.nav-tabs a").click(function (e) {
+        e.preventDefault()
+        $(this).tab('show')
+      });
+
+      var clicked = {};
+
+      // initial values for query parameters
+      var inputValues = {
+        currencyCode: "EUR",
+        countryCode: "NL",
+        locale: "en_GB",
+        amount: 1000,
+        isRecurring: true,
+        source: "USD",
+        target: "EUR",
+        mandateCancelDate: "20160503",
+        offset: 0,
+        limit: 10
+      };
+
+      var operations = {};
+      operations.v1CreateHostedCheckout = {
+        apiVersion: "v1",
+        href: "/v1/hostedcheckouts/create",
+        uriParameters: [  ],
+        queryParameters: [  ],
+        formParameters: {  }
+      };
+      operations.v1GetHostedCheckout = {
+        apiVersion: "v1",
+        href: "/v1/hostedcheckouts/get",
+        uriParameters: [ "hostedCheckoutId" ],
+        queryParameters: [  ],
+        formParameters: {  }
+      };
+      operations.v1DeleteHostedCheckout = {
+        apiVersion: "v1",
+        href: "/v1/hostedcheckouts/delete",
+        uriParameters: [ "hostedCheckoutId" ],
+        queryParameters: [  ],
+        formParameters: {  }
+      };
+      operations.v1CreateHostedMandateManagement = {
+        apiVersion: "v1",
+        href: "/v1/hostedmandatemanagements/create",
+        uriParameters: [  ],
+        queryParameters: [  ],
+        formParameters: {  }
+      };
+      operations.v1GetHostedMandateManagement = {
+        apiVersion: "v1",
+        href: "/v1/hostedmandatemanagements/get",
+        uriParameters: [ "hostedMandateManagementId" ],
+        queryParameters: [  ],
+        formParameters: {  }
+      };
+      operations.v1CreatePayment = {
+        apiVersion: "v1",
+        href: "/v1/payments/create",
+        uriParameters: [  ],
+        queryParameters: [  ],
+        formParameters: {  }
+      };
+      operations.v1FindPayments = {
+        apiVersion: "v1",
+        href: "/v1/payments/find",
+        uriParameters: [  ],
+        queryParameters: [ "hostedCheckoutId", "merchantReference", "merchantOrderId", "offset", "limit" ],
+        formParameters: {  }
+      };
+      operations.v1GetPayment = {
+        apiVersion: "v1",
+        href: "/v1/payments/get",
+        uriParameters: [ "paymentId" ],
+        queryParameters: [  ],
+        formParameters: {  }
+      };
+      operations.v1CompletePayment = {
+        apiVersion: "v1",
+        href: "/v1/payments/complete",
+        uriParameters: [ "paymentId" ],
+        queryParameters: [  ],
+        formParameters: {  }
+      };
+      operations.v1GetThirdPartyStatus = {
+        apiVersion: "v1",
+        href: "/v1/payments/thirdPartyStatus",
+        uriParameters: [ "paymentId" ],
+        queryParameters: [  ],
+        formParameters: {  }
+      };
+      operations.v1TokenizePayment = {
+        apiVersion: "v1",
+        href: "/v1/payments/tokenize",
+        uriParameters: [ "paymentId" ],
+        queryParameters: [  ],
+        formParameters: {  }
+      };
+      operations.v1ProcessChallengedPayment = {
+        apiVersion: "v1",
+        href: "/v1/payments/processchallenged",
+        uriParameters: [ "paymentId" ],
+        queryParameters: [  ],
+        formParameters: {  }
+      };
+      operations.v1ApprovePayment = {
+        apiVersion: "v1",
+        href: "/v1/payments/approve",
+        uriParameters: [ "paymentId" ],
+        queryParameters: [  ],
+        formParameters: {  }
+      };
+      operations.v1CapturePayment = {
+        apiVersion: "v1",
+        href: "/v1/payments/capture",
+        uriParameters: [ "paymentId" ],
+        queryParameters: [  ],
+        formParameters: {  }
+      };
+      operations.v1CancelApprovalPayment = {
+        apiVersion: "v1",
+        href: "/v1/payments/cancelapproval",
+        uriParameters: [ "paymentId" ],
+        queryParameters: [  ],
+        formParameters: {  }
+      };
+      operations.v1GetPaymentCaptures = {
+        apiVersion: "v1",
+        href: "/v1/payments/captures",
+        uriParameters: [ "paymentId" ],
+        queryParameters: [  ],
+        formParameters: {  }
+      };
+      operations.v1RefundPayment = {
+        apiVersion: "v1",
+        href: "/v1/payments/refund",
+        uriParameters: [ "paymentId" ],
+        queryParameters: [  ],
+        formParameters: {  }
+      };
+      operations.v1GetRefunds = {
+        apiVersion: "v1",
+        href: "/v1/payments/refunds",
+        uriParameters: [ "paymentId" ],
+        queryParameters: [  ],
+        formParameters: {  }
+      };
+      operations.v1CancelPayment = {
+        apiVersion: "v1",
+        href: "/v1/payments/cancel",
+        uriParameters: [ "paymentId" ],
+        queryParameters: [  ],
+        formParameters: {  }
+      };
+      operations.v1CreatePaymentDispute = {
+        apiVersion: "v1",
+        href: "/v1/payments/dispute",
+        uriParameters: [ "paymentId" ],
+        queryParameters: [  ],
+        formParameters: {  }
+      };
+      operations.v1GetPaymentDisputes = {
+        apiVersion: "v1",
+        href: "/v1/payments/disputes",
+        uriParameters: [ "paymentId" ],
+        queryParameters: [  ],
+        formParameters: {  }
+      };
+      operations.v1GetPaymentDeviceFingerprintDetails = {
+        apiVersion: "v1",
+        href: "/v1/payments/devicefingerprint",
+        uriParameters: [ "paymentId" ],
+        queryParameters: [  ],
+        formParameters: {  }
+      };
+      operations.v1GetCapture = {
+        apiVersion: "v1",
+        href: "/v1/captures/get",
+        uriParameters: [ "captureId" ],
+        queryParameters: [  ],
+        formParameters: {  }
+      };
+      operations.v1CreateRefundCapture = {
+        apiVersion: "v1",
+        href: "/v1/captures/refund",
+        uriParameters: [ "captureId" ],
+        queryParameters: [  ],
+        formParameters: {  }
+      };
+      operations.v1FindRefunds = {
+        apiVersion: "v1",
+        href: "/v1/refunds/find",
+        uriParameters: [  ],
+        queryParameters: [ "hostedCheckoutId", "merchantReference", "merchantOrderId", "offset", "limit" ],
+        formParameters: {  }
+      };
+      operations.v1GetRefund = {
+        apiVersion: "v1",
+        href: "/v1/refunds/get",
+        uriParameters: [ "refundId" ],
+        queryParameters: [  ],
+        formParameters: {  }
+      };
+      operations.v1ApproveRefund = {
+        apiVersion: "v1",
+        href: "/v1/refunds/approve",
+        uriParameters: [ "refundId" ],
+        queryParameters: [  ],
+        formParameters: {  }
+      };
+      operations.v1CancelRefund = {
+        apiVersion: "v1",
+        href: "/v1/refunds/cancel",
+        uriParameters: [ "refundId" ],
+        queryParameters: [  ],
+        formParameters: {  }
+      };
+      operations.v1CancelApprovalRefund = {
+        apiVersion: "v1",
+        href: "/v1/refunds/cancelapproval",
+        uriParameters: [ "refundId" ],
+        queryParameters: [  ],
+        formParameters: {  }
+      };
+      operations.v1GetDispute = {
+        apiVersion: "v1",
+        href: "/v1/disputes/get",
+        uriParameters: [ "disputeId" ],
+        queryParameters: [  ],
+        formParameters: {  }
+      };
+      operations.v1SubmitDispute = {
+        apiVersion: "v1",
+        href: "/v1/disputes/submit",
+        uriParameters: [ "disputeId" ],
+        queryParameters: [  ],
+        formParameters: {  }
+      };
+      operations.v1CancelDispute = {
+        apiVersion: "v1",
+        href: "/v1/disputes/cancel",
+        uriParameters: [ "disputeId" ],
+        queryParameters: [  ],
+        formParameters: {  }
+      };
+      operations.v1UploadDisputeFile = {
+        apiVersion: "v1",
+        href: "/v1/disputes/uploadFile",
+        uriParameters: [ "disputeId" ],
+        queryParameters: [  ],
+        formParameters: { "file": "file" }
+      };
+      operations.v1CreatePayout = {
+        apiVersion: "v1",
+        href: "/v1/payouts/create",
+        uriParameters: [  ],
+        queryParameters: [  ],
+        formParameters: {  }
+      };
+      operations.v1FindPayouts = {
+        apiVersion: "v1",
+        href: "/v1/payouts/find",
+        uriParameters: [  ],
+        queryParameters: [ "merchantReference", "merchantOrderId", "offset", "limit" ],
+        formParameters: {  }
+      };
+      operations.v1GetPayout = {
+        apiVersion: "v1",
+        href: "/v1/payouts/get",
+        uriParameters: [ "payoutId" ],
+        queryParameters: [  ],
+        formParameters: {  }
+      };
+      operations.v1ApprovePayout = {
+        apiVersion: "v1",
+        href: "/v1/payouts/approve",
+        uriParameters: [ "payoutId" ],
+        queryParameters: [  ],
+        formParameters: {  }
+      };
+      operations.v1CancelPayout = {
+        apiVersion: "v1",
+        href: "/v1/payouts/cancel",
+        uriParameters: [ "payoutId" ],
+        queryParameters: [  ],
+        formParameters: {  }
+      };
+      operations.v1CancelApprovalPayout = {
+        apiVersion: "v1",
+        href: "/v1/payouts/cancelapproval",
+        uriParameters: [ "payoutId" ],
+        queryParameters: [  ],
+        formParameters: {  }
+      };
+      operations.v1GetPaymentProductGroups = {
+        apiVersion: "v1",
+        href: "/v1/productgroups/find",
+        uriParameters: [  ],
+        queryParameters: [ "countryCode", "currencyCode", "locale", "amount", "isRecurring", "isInstallments", "hide" ],
+        formParameters: {  }
+      };
+      operations.v1GetPaymentProductGroup = {
+        apiVersion: "v1",
+        href: "/v1/productgroups/get",
+        uriParameters: [ "paymentProductGroupId" ],
+        queryParameters: [ "countryCode", "currencyCode", "locale", "amount", "isRecurring", "isInstallments", "hide" ],
+        formParameters: {  }
+      };
+      operations.v1GetDeviceFingerprintForGroups = {
+        apiVersion: "v1",
+        href: "/v1/productgroups/deviceFingerprint",
+        uriParameters: [ "paymentProductGroupId" ],
+        queryParameters: [  ],
+        formParameters: {  }
+      };
+      operations.v1GetPaymentProducts = {
+        apiVersion: "v1",
+        href: "/v1/products/find",
+        uriParameters: [  ],
+        queryParameters: [ "countryCode", "currencyCode", "locale", "amount", "isRecurring", "isInstallments", "hide" ],
+        formParameters: {  }
+      };
+      operations.v1GetPaymentProduct = {
+        apiVersion: "v1",
+        href: "/v1/products/get",
+        uriParameters: [ "paymentProductId" ],
+        queryParameters: [ "countryCode", "currencyCode", "locale", "amount", "isRecurring", "isInstallments", "hide", "forceBasicFlow" ],
+        formParameters: {  }
+      };
+      operations.v1GetDirectory = {
+        apiVersion: "v1",
+        href: "/v1/products/directory",
+        uriParameters: [ "paymentProductId" ],
+        queryParameters: [ "countryCode", "currencyCode" ],
+        formParameters: {  }
+      };
+      operations.v1GetCustomerDetails = {
+        apiVersion: "v1",
+        href: "/v1/products/customerDetails",
+        uriParameters: [ "paymentProductId", "fiscalNumber" ],
+        queryParameters: [  ],
+        formParameters: {  }
+      };
+      operations.v1GetDeviceFingerprint = {
+        apiVersion: "v1",
+        href: "/v1/products/deviceFingerprint",
+        uriParameters: [ "paymentProductId" ],
+        queryParameters: [  ],
+        formParameters: {  }
+      };
+      operations.v1GetNetworks = {
+        apiVersion: "v1",
+        href: "/v1/products/networks",
+        uriParameters: [ "paymentProductId" ],
+        queryParameters: [ "countryCode", "currencyCode", "amount", "isRecurring" ],
+        formParameters: {  }
+      };
+      operations.v1CreatePaymentProductSession = {
+        apiVersion: "v1",
+        href: "/v1/products/sessions",
+        uriParameters: [ "paymentProductId" ],
+        queryParameters: [  ],
+        formParameters: {  }
+      };
+      operations.v1RiskAssessmentBankAccount = {
+        apiVersion: "v1",
+        href: "/v1/riskassessments/bankaccounts",
+        uriParameters: [  ],
+        queryParameters: [  ],
+        formParameters: {  }
+      };
+      operations.v1RiskAssessmentCards = {
+        apiVersion: "v1",
+        href: "/v1/riskassessments/cards",
+        uriParameters: [  ],
+        queryParameters: [  ],
+        formParameters: {  }
+      };
+      operations.v1ConvertAmount = {
+        apiVersion: "v1",
+        href: "/v1/services/convertAmount",
+        uriParameters: [  ],
+        queryParameters: [ "source", "target", "amount" ],
+        formParameters: {  }
+      };
+      operations.v1ConvertBankAccount = {
+        apiVersion: "v1",
+        href: "/v1/services/bankaccount",
+        uriParameters: [  ],
+        queryParameters: [  ],
+        formParameters: {  }
+      };
+      operations.v1IINDetails = {
+        apiVersion: "v1",
+        href: "/v1/services/getIINdetails",
+        uriParameters: [  ],
+        queryParameters: [  ],
+        formParameters: {  }
+      };
+      operations.v1GetPrivacyPolicy = {
+        apiVersion: "v1",
+        href: "/v1/services/privacypolicy",
+        uriParameters: [  ],
+        queryParameters: [ "locale", "paymentProductId" ],
+        formParameters: {  }
+      };
+      operations.v1TestConnection = {
+        apiVersion: "v1",
+        href: "/v1/services/testconnection",
+        uriParameters: [  ],
+        queryParameters: [  ],
+        formParameters: {  }
+      };
+      operations.v1CreateToken = {
+        apiVersion: "v1",
+        href: "/v1/tokens/create",
+        uriParameters: [  ],
+        queryParameters: [  ],
+        formParameters: {  }
+      };
+      operations.v1GetToken = {
+        apiVersion: "v1",
+        href: "/v1/tokens/get",
+        uriParameters: [ "tokenId" ],
+        queryParameters: [  ],
+        formParameters: {  }
+      };
+      operations.v1UpdateToken = {
+        apiVersion: "v1",
+        href: "/v1/tokens/update",
+        uriParameters: [ "tokenId" ],
+        queryParameters: [  ],
+        formParameters: {  }
+      };
+      operations.v1DeleteToken = {
+        apiVersion: "v1",
+        href: "/v1/tokens/delete",
+        uriParameters: [ "tokenId" ],
+        queryParameters: [ "mandateCancelDate" ],
+        formParameters: {  }
+      };
+      operations.v1ApproveSepaDirectDebitToken = {
+        apiVersion: "v1",
+        href: "/v1/tokens/approvesepadirectdebit",
+        uriParameters: [ "tokenId" ],
+        queryParameters: [  ],
+        formParameters: {  }
+      };
+      operations.v1CreateMandate = {
+        apiVersion: "v1",
+        href: "/v1/mandates/create",
+        uriParameters: [  ],
+        queryParameters: [  ],
+        formParameters: {  }
+      };
+      operations.v1CreateMandateWithReference = {
+        apiVersion: "v1",
+        href: "/v1/mandates/createWithMandateReference",
+        uriParameters: [ "uniqueMandateReference" ],
+        queryParameters: [  ],
+        formParameters: {  }
+      };
+      operations.v1GetMandate = {
+        apiVersion: "v1",
+        href: "/v1/mandates/get",
+        uriParameters: [ "uniqueMandateReference" ],
+        queryParameters: [  ],
+        formParameters: {  }
+      };
+      operations.v1BlockMandate = {
+        apiVersion: "v1",
+        href: "/v1/mandates/block",
+        uriParameters: [ "uniqueMandateReference" ],
+        queryParameters: [  ],
+        formParameters: {  }
+      };
+      operations.v1UnblockMandate = {
+        apiVersion: "v1",
+        href: "/v1/mandates/unblock",
+        uriParameters: [ "uniqueMandateReference" ],
+        queryParameters: [  ],
+        formParameters: {  }
+      };
+      operations.v1RevokeMandate = {
+        apiVersion: "v1",
+        href: "/v1/mandates/revoke",
+        uriParameters: [ "uniqueMandateReference" ],
+        queryParameters: [  ],
+        formParameters: {  }
+      };
+      operations.v1CreateSession = {
+        apiVersion: "v1",
+        href: "/v1/sessions/create",
+        uriParameters: [  ],
+        queryParameters: [  ],
+        formParameters: {  }
+      };
+      operations.v1GetInstallmentsInfo = {
+        apiVersion: "v1",
+        href: "/v1/installments/getInstallmentsInfo",
+        uriParameters: [  ],
+        queryParameters: [  ],
+        formParameters: {  }
+      };
+      operations.v1GetFile = {
+        apiVersion: "v1",
+        href: "/v1/files/getFile",
+        uriParameters: [ "fileId" ],
+        queryParameters: [  ],
+        formParameters: {  }
+      };
+
+      var currentFileURL = null;
+
+      var isBinaryContent = function (contentType) {
+        return contentType
+          && !(contentType.length >= 5 && contentType.substring(0, 5) === "text/")
+          && contentType.indexOf("json") === -1
+          && contentType.indexOf("xml") === -1;
+      };
+      var isJSON = function (contentType) {
+        return !contentType || contentType.indexOf("json") !== -1;
+      };
+      var getFileName = function (disposition) {
+        if (disposition) {
+          var dispositionFilenamePattern = /(?:^|;)\s*filename\s*=\s*(.*?)\s*(?:;|$)/i;
+          var match = disposition.match(dispositionFilenamePattern);
+          if (match) {
+            return trimQuotes(match[1]);
+          }
+        }
+        return "unknown";
+      };
+      var trimQuotes = function (fileName) {
+        if (fileName.length < 2) {
+          return fileName;
+        }
+        if ((fileName[0] === '"' && fileName[fileName.length - 1] === '"') || (fileName[0] === "'" && fileName[fileName.length - 1] === "'")) {
+          return fileName.substring(1, fileName.length - 1);
+        }
+        return fileName;
+      };
+
+      var renderBinaryContent = function (apiVersion, data, xhr) {
+        var contentType = xhr.getResponseHeader("Content-Type");
+        var contentLength = xhr.getResponseHeader("Content-Length");
+        var contentDisposition = xhr.getResponseHeader("Content-Disposition");
+        var fileName = getFileName(contentDisposition);
+
+        $("#" + apiVersion + "Output").text("Content-Type: " + (contentType || "-") + "\nContent-Length: " + (contentLength || "-") + "\nContent-Disposition: " + (contentDisposition || "-"));
+
+        var download = $("<a>").text("Save File");
+        if (window.navigator.msSaveOrOpenBlob) {
+          download.attr("href", "#");
+          download.click(function () {
+            window.navigator.msSaveOrOpenBlob(data, fileName);
+          });
+        } else {
+          currentFileURL = URL.createObjectURL(data);
+          download.attr({"href": currentFileURL, "download": fileName});
+        }
+        $("#" + apiVersion + "Output").append($("<p>")).append(download);
+      };
+      var renderJSON = function (apiVersion, data) {
+        if (data && data.size) {
+          var reader = new FileReader();
+          reader.onloadend = function () {
+            var json = JSON.parse(reader.result);
+            $("#" + apiVersion + "Output").text(JSON.stringify(json, null, "  "));
+          };
+          reader.readAsText(data);
+        } else {
+          $("#" + apiVersion + "Output").text(" ");
+        }
+      };
+      var renderOther = function (apiVersion, data) {
+        if (data && data.size) {
+          var reader = new FileReader();
+          reader.onloadend = function () {
+            $("#" + apiVersion + "Output").text(reader.result);
+          };
+          reader.readAsText(data);
+        } else {
+          $("#" + apiVersion + "Output").text(" ");
+        }
+      };
+
+      var doSend = function (operation, params, files) {
+        // Note: jQuery.ajax either does not return binary content correctly, or it does not return an error response.
+        // Using XMLHttpRequest directly allows us to ignore the status code and retrieve the response in all cases.
+        var xhr = new XMLHttpRequest();
+
+        var url = operation.href;
+        var method = "GET";
+        var requestData = null;
+        var start = new Date().getTime();
+
+        if (params) {
+          $.each(operation.uriParameters, function (index, param) {
+            var value = typeof params[param] === "undefined" ? "" : params[param];
+            url = url + "/" + value;
+          });
+          $.each(operation.queryParameters, function (index, param) {
+            var value = typeof params[param] === "undefined" ? "" : params[param];
+            if (value !== "") {
+              var separator = url.indexOf("?") == -1 ? "?" : "&";
+              url = url + separator + param + "=" + encodeURI(value);
+            }
+          });
+        }
+
+        if (Object.keys(operation.formParameters).length > 0) {
+          requestData = new FormData();
+          $.each(operation.formParameters, function (name, type) {
+            if (type === "file") {
+               var file = !files || typeof files[name] === "undefined" ? null : files[name];
+               if (file !== null) {
+                 requestData.append(name, file);
+               }
+            } else {
+              var value = !params || typeof params[param] === "undefined" ? "" : params[name];
+              requestData.append(name, value);
+            }
+          });
+          method = "POST";
+        }
+        xhr.open(method, url);
+        xhr.responseType = "blob";
+
+        $("#api" + operation.apiVersion + " .output-wrapper").show();
+        if (currentFileURL) {
+          URL.revokeObjectURL(currentFileURL);
+          currentFileURL = null;
+        }
+        $("#" + operation.apiVersion + "Output").text("Loading ...");
+        $("#" + operation.apiVersion + "RoundTrip").text("-");
+        $("#" + operation.apiVersion + "OutputStatusCode").text("Loading ...");
+
+        xhr.onload = function () {
+          var contentType = xhr.getResponseHeader("Content-Type");
+          var responseData = xhr.response;
+          if (isBinaryContent(contentType)) {
+            renderBinaryContent(operation.apiVersion, responseData, xhr);
+          } else if (isJSON(contentType)) {
+            renderJSON(operation.apiVersion, responseData);
+          } else {
+            renderOther(operation.apiVersion, responseData);
+          }
+          $("#" + operation.apiVersion + "OutputStatusCode").text(xhr.status + " " + xhr.statusText);
+          $("#" + operation.apiVersion + "RoundTrip").text(new Date().getTime() - start);
+        };
+        xhr.send(requestData);
+      };
+
+      $("a[data-operation]").click(function (e) {
+        e.preventDefault();
+        var operation = operations[$(this).data("operation")];
+        var properties = operation.uriParameters.concat(operation.queryParameters);
+        properties = properties.concat(Object.keys(operation.formParameters));
+        if (properties.length > 0) {
+          // fill popup
+          clicked = operation;
+
+          // store existing input values
+          $("#inputs input").each(function (index, input) {
+            if (input.type !== "file") {
+              inputValues[$(input).data("key")] = $(input).val();
+            }
+          });
+          // re-create input modal content
+          var $inputs = $("#inputs").empty();
+          $.each(properties, function (index, property) {
+            var id = "i" + (index + 1);
+            var prop = property.trim();
+            var $label = $("<label>").attr("for", id).addClass("col-sm-3 control-label").text(prop);
+            var $input = $("<input>").attr({ "id": id, "placeholder": prop }).addClass("form-control").data("key", prop);
+            if (operation.formParameters[prop] === "file") {
+              $input.attr("type", "file");
+            } else {
+              $input.attr("type", "text").val(inputValues[prop]);
+            }
+            var $formGroup = $("<div>").addClass("form-group").append($label).append($("<div>").addClass("col-sm-9").append($input));
+            $inputs.append($formGroup);
+          });
+
+          $("#themodal").modal({backdrop: "static"});
+        } else {
+          doSend(operation);
+        }
+      });
+
+      $("#themodal").on("shown.bs.modal", function () {
+        $("#inputs #i1").focus();
+      });
+
+      $("#inputs").on("keydown", "input", function (e) {
+        if (e.which == 13) {
+          e.preventDefault();
+          $("#sendOverlay").click();
+        }
+      });
+
+      $("#sendOverlay").on("click", function (e) {
+        var params = {};
+        var files = {};
+        $("#inputs input").each(function (index, input) {
+          if (input.type == "file") {
+            files[$(input).attr("placeholder")] = input.files[0];
+          } else {
+            params[$(input).attr("placeholder")] = $(input).val();
+          }
+        });
+        doSend(clicked, params, files);
+        $("#themodal").modal("hide");
+      });
+    });
+  </script>
+</body>
+</html>

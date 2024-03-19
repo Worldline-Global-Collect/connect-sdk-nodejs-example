@@ -1,0 +1,6 @@
+node_modules
+/views/index.marko.js
+logfile.txt
+config.json
+.vscode
+.idea

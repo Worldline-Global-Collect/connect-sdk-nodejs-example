@@ -1,0 +1,7 @@
+{
+  "paymentProductSession302SpecificInput" : {
+    "domainName" : "pay1.checkout.worldline-solutions.com",
+    "displayName" : "Worldline",
+    "validationUrl" : "<VALIDATION URL RECEIVED FROM APPLE>"
+  }
+}

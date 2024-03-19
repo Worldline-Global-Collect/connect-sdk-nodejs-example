@@ -1,0 +1,29 @@
+{
+  "name": "connect-sdk-nodejs-example",
+  "version": "2.0.0",
+  "description": "An example application for connect-sdk-nodejs",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.13.4",
+    "connect-busboy": "^0.0.2",
+    "raw-body": "2.3.3",
+    "log4js": "^6.4.1",
+    "marko": "^3.0.5",
+    "connect-sdk-nodejs": "^5.0.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Worldline-Global-Collect/connect-sdk-nodejs-example.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Worldline Global Collect",
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "bugs": {
+    "url": "https://github.com/Worldline-Global-Collect/connect-sdk-nodejs-example/issues"
+  },
+  "homepage": "https://github.com/Worldline-Global-Collect/connect-sdk-nodejs-example#readme"
+}
