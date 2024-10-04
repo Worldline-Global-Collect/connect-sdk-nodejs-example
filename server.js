@@ -122,29 +122,29 @@ function renderError(res, error) {
 
 // v1 Hosted Checkouts
 app.get("/v1/hostedcheckouts/create", function (req, res) {
-  client.v1.hostedcheckouts.create(merchantId, v1CreateHostedCheckoutStub, null)
+  client.v1.hostedcheckouts.create(merchantId, v1CreateHostedCheckoutStub)
     .then(sdkResponse => renderResponse(res, sdkResponse))
     .catch(e => renderError(res, e));
 });
 app.get("/v1/hostedcheckouts/get/:hostedCheckoutId", function (req, res) {
-  client.v1.hostedcheckouts.get(merchantId, req.params.hostedCheckoutId, null)
+  client.v1.hostedcheckouts.get(merchantId, req.params.hostedCheckoutId)
     .then(sdkResponse => renderResponse(res, sdkResponse))
     .catch(e => renderError(res, e));
 });
 app.get("/v1/hostedcheckouts/delete/:hostedCheckoutId", function (req, res) {
-  client.v1.hostedcheckouts.remove(merchantId, req.params.hostedCheckoutId, null)
+  client.v1.hostedcheckouts.remove(merchantId, req.params.hostedCheckoutId)
     .then(sdkResponse => renderResponse(res, sdkResponse))
     .catch(e => renderError(res, e));
 });
 
 // v1 Hosted Mandate Management
 app.get("/v1/hostedmandatemanagements/create", function (req, res) {
-  client.v1.hostedmandatemanagements.create(merchantId, v1CreateHostedMandateManagementStub, null)
+  client.v1.hostedmandatemanagements.create(merchantId, v1CreateHostedMandateManagementStub)
     .then(sdkResponse => renderResponse(res, sdkResponse))
     .catch(e => renderError(res, e));
 });
 app.get("/v1/hostedmandatemanagements/get/:hostedMandateManagementId", function (req, res) {
-  client.v1.hostedmandatemanagements.get(merchantId, req.params.hostedMandateManagementId, null)
+  client.v1.hostedmandatemanagements.get(merchantId, req.params.hostedMandateManagementId)
     .then(sdkResponse => renderResponse(res, sdkResponse))
     .catch(e => renderError(res, e));
 });
@@ -174,47 +174,47 @@ app.get("/v1/payments/find", function (req, res) {
     .catch(e => renderError(res, e));
 });
 app.get("/v1/payments/get/:paymentId", function (req, res) {
-  client.v1.payments.get(merchantId, req.params.paymentId, null)
+  client.v1.payments.get(merchantId, req.params.paymentId)
     .then(sdkResponse => renderResponse(res, sdkResponse))
     .catch(e => renderError(res, e));
 });
 app.get("/v1/payments/complete/:paymentId", function (req, res) {
-  client.v1.payments.complete(merchantId, req.params.paymentId, v1CompletePaymentStub, null)
+  client.v1.payments.complete(merchantId, req.params.paymentId, v1CompletePaymentStub)
     .then(sdkResponse => renderResponse(res, sdkResponse))
     .catch(e => renderError(res, e));
 });
 app.get("/v1/payments/thirdPartyStatus/:paymentId", function (req, res) {
-  client.v1.payments.thirdPartyStatus(merchantId, req.params.paymentId, null)
+  client.v1.payments.thirdPartyStatus(merchantId, req.params.paymentId)
     .then(sdkResponse => renderResponse(res, sdkResponse))
     .catch(e => renderError(res, e));
 });
 app.get("/v1/payments/tokenize/:paymentId", function (req, res) {
-  client.v1.payments.tokenize(merchantId, req.params.paymentId, v1TokenizePaymentStub, null)
+  client.v1.payments.tokenize(merchantId, req.params.paymentId, v1TokenizePaymentStub)
     .then(sdkResponse => renderResponse(res, sdkResponse))
     .catch(e => renderError(res, e));
 });
 app.get("/v1/payments/processchallenged/:paymentId", function (req, res) {
-  client.v1.payments.processchallenged(merchantId, req.params.paymentId, null)
+  client.v1.payments.processchallenged(merchantId, req.params.paymentId)
     .then(sdkResponse => renderResponse(res, sdkResponse))
     .catch(e => renderError(res, e));
 });
 app.get("/v1/payments/approve/:paymentId", function (req, res) {
-  client.v1.payments.approve(merchantId, req.params.paymentId, v1ApprovePaymentStub, null)
+  client.v1.payments.approve(merchantId, req.params.paymentId, v1ApprovePaymentStub)
     .then(sdkResponse => renderResponse(res, sdkResponse))
     .catch(e => renderError(res, e));
 });
 app.get("/v1/payments/capture/:paymentId", function (req, res) {
-  client.v1.payments.capture(merchantId, req.params.paymentId, v1CapturePaymentStub, null)
+  client.v1.payments.capture(merchantId, req.params.paymentId, v1CapturePaymentStub)
     .then(sdkResponse => renderResponse(res, sdkResponse))
     .catch(e => renderError(res, e));
 });
 app.get("/v1/payments/cancelapproval/:paymentId", function (req, res) {
-  client.v1.payments.cancelapproval(merchantId, req.params.paymentId, null)
+  client.v1.payments.cancelapproval(merchantId, req.params.paymentId)
     .then(sdkResponse => renderResponse(res, sdkResponse))
     .catch(e => renderError(res, e));
 });
 app.get("/v1/payments/captures/:paymentId", function (req, res) {
-  client.v1.payments.captures(merchantId, req.params.paymentId, null)
+  client.v1.payments.captures(merchantId, req.params.paymentId)
     .then(sdkResponse => renderResponse(res, sdkResponse))
     .catch(e => renderError(res, e));
 });
@@ -229,39 +229,39 @@ app.get("/v1/payments/refund/:paymentId", function (req, res) {
     .catch(e => renderError(res, e));
 });
 app.get("/v1/payments/refunds/:paymentId", function (req, res) {
-  client.v1.payments.refunds(merchantId, req.params.paymentId, null)
+  client.v1.payments.refunds(merchantId, req.params.paymentId)
     .then(sdkResponse => renderResponse(res, sdkResponse))
     .catch(e => renderError(res, e));
 });
 app.get("/v1/payments/cancel/:paymentId", function (req, res) {
-  client.v1.payments.cancel(merchantId, req.params.paymentId, null)
+  client.v1.payments.cancel(merchantId, req.params.paymentId)
     .then(sdkResponse => renderResponse(res, sdkResponse))
     .catch(e => renderError(res, e));
 });
 app.get("/v1/payments/dispute/:paymentId", function (req, res) {
-  client.v1.payments.dispute(merchantId, req.params.paymentId, v1CreatePaymentDisputeStub, null)
+  client.v1.payments.dispute(merchantId, req.params.paymentId, v1CreatePaymentDisputeStub)
     .then(sdkResponse => renderResponse(res, sdkResponse))
     .catch(e => renderError(res, e));
 });
 app.get("/v1/payments/disputes/:paymentId", function (req, res) {
-  client.v1.payments.disputes(merchantId, req.params.paymentId, null)
+  client.v1.payments.disputes(merchantId, req.params.paymentId)
     .then(sdkResponse => renderResponse(res, sdkResponse))
     .catch(e => renderError(res, e));
 });
 app.get("/v1/payments/devicefingerprint/:paymentId", function (req, res) {
-  client.v1.payments.devicefingerprint(merchantId, req.params.paymentId, null)
+  client.v1.payments.devicefingerprint(merchantId, req.params.paymentId)
     .then(sdkResponse => renderResponse(res, sdkResponse))
     .catch(e => renderError(res, e));
 });
 
 // v1 Captures
 app.get("/v1/captures/get/:captureId", function (req, res) {
-  client.v1.captures.get(merchantId, req.params.captureId, null)
+  client.v1.captures.get(merchantId, req.params.captureId)
     .then(sdkResponse => renderResponse(res, sdkResponse))
     .catch(e => renderError(res, e));
 });
 app.get("/v1/captures/refund/:captureId", function (req, res) {
-  client.v1.captures.refund(merchantId, req.params.captureId, v1CreateRefundCaptureStub, null)
+  client.v1.captures.refund(merchantId, req.params.captureId, v1CreateRefundCaptureStub)
     .then(sdkResponse => renderResponse(res, sdkResponse))
     .catch(e => renderError(res, e));
 });
@@ -281,39 +281,39 @@ app.get("/v1/refunds/find", function (req, res) {
     .catch(e => renderError(res, e));
 });
 app.get("/v1/refunds/get/:refundId", function (req, res) {
-  client.v1.refunds.get(merchantId, req.params.refundId, null)
+  client.v1.refunds.get(merchantId, req.params.refundId)
     .then(sdkResponse => renderResponse(res, sdkResponse))
     .catch(e => renderError(res, e));
 });
 app.get("/v1/refunds/approve/:refundId", function (req, res) {
-  client.v1.refunds.approve(merchantId, req.params.refundId, v1ApproveRefundStub, null)
+  client.v1.refunds.approve(merchantId, req.params.refundId, v1ApproveRefundStub)
     .then(sdkResponse => renderResponse(res, sdkResponse))
     .catch(e => renderError(res, e));
 });
 app.get("/v1/refunds/cancel/:refundId", function (req, res) {
-  client.v1.refunds.cancel(merchantId, req.params.refundId, null)
+  client.v1.refunds.cancel(merchantId, req.params.refundId)
     .then(sdkResponse => renderResponse(res, sdkResponse))
     .catch(e => renderError(res, e));
 });
 app.get("/v1/refunds/cancelapproval/:refundId", function (req, res) {
-  client.v1.refunds.cancelapproval(merchantId, req.params.refundId, null)
+  client.v1.refunds.cancelapproval(merchantId, req.params.refundId)
     .then(sdkResponse => renderResponse(res, sdkResponse))
     .catch(e => renderError(res, e));
 });
 
 // v1 Disputes
 app.get("/v1/disputes/get/:disputeId", function (req, res) {
-  client.v1.disputes.get(merchantId, req.params.disputeId, null)
+  client.v1.disputes.get(merchantId, req.params.disputeId)
     .then(sdkResponse => renderResponse(res, sdkResponse))
     .catch(e => renderError(res, e));
 });
 app.get("/v1/disputes/submit/:disputeId", function (req, res) {
-  client.v1.disputes.submit(merchantId, req.params.disputeId, null)
+  client.v1.disputes.submit(merchantId, req.params.disputeId)
     .then(sdkResponse => renderResponse(res, sdkResponse))
     .catch(e => renderError(res, e));
 });
 app.get("/v1/disputes/cancel/:disputeId", function (req, res) {
-  client.v1.disputes.cancel(merchantId, req.params.disputeId, null)
+  client.v1.disputes.cancel(merchantId, req.params.disputeId)
     .then(sdkResponse => renderResponse(res, sdkResponse))
     .catch(e => renderError(res, e));
 });
@@ -333,7 +333,7 @@ app.post("/v1/disputes/uploadFile/:disputeId", function (req, res) {
     body[name] = value;
   });
   req.busboy.on("finish", function () {
-    client.v1.disputes.uploadFile(merchantId, req.params.disputeId, body, null)
+    client.v1.disputes.uploadFile(merchantId, req.params.disputeId, body)
       .then(sdkResponse => renderResponse(res, sdkResponse))
       .catch(e => renderError(res, e));
   });
@@ -364,22 +364,22 @@ app.get("/v1/payouts/find", function (req, res) {
     .catch(e => renderError(res, e));
 });
 app.get("/v1/payouts/get/:payoutId", function (req, res) {
-  client.v1.payouts.get(merchantId, req.params.payoutId, null)
+  client.v1.payouts.get(merchantId, req.params.payoutId)
     .then(sdkResponse => renderResponse(res, sdkResponse))
     .catch(e => renderError(res, e));
 });
 app.get("/v1/payouts/approve/:payoutId", function (req, res) {
-  client.v1.payouts.approve(merchantId, req.params.payoutId, v1ApprovePayoutStub, null)
+  client.v1.payouts.approve(merchantId, req.params.payoutId, v1ApprovePayoutStub)
     .then(sdkResponse => renderResponse(res, sdkResponse))
     .catch(e => renderError(res, e));
 });
 app.get("/v1/payouts/cancel/:payoutId", function (req, res) {
-  client.v1.payouts.cancel(merchantId, req.params.payoutId, null)
+  client.v1.payouts.cancel(merchantId, req.params.payoutId)
     .then(sdkResponse => renderResponse(res, sdkResponse))
     .catch(e => renderError(res, e));
 });
 app.get("/v1/payouts/cancelapproval/:payoutId", function (req, res) {
-  client.v1.payouts.cancelapproval(merchantId, req.params.payoutId, null)
+  client.v1.payouts.cancelapproval(merchantId, req.params.payoutId)
     .then(sdkResponse => renderResponse(res, sdkResponse))
     .catch(e => renderError(res, e));
 });
@@ -412,7 +412,7 @@ app.get("/v1/productgroups/get/:paymentProductGroupId", function (req, res) {
     .catch(e => renderError(res, e));
 });
 app.get("/v1/productgroups/deviceFingerprint/:paymentProductGroupId", function (req, res) {
-  client.v1.productgroups.deviceFingerprint(merchantId, req.params.paymentProductGroupId, v1GetDeviceFingerprintForGroupsStub, null)
+  client.v1.productgroups.deviceFingerprint(merchantId, req.params.paymentProductGroupId, v1GetDeviceFingerprintForGroupsStub)
     .then(sdkResponse => renderResponse(res, sdkResponse))
     .catch(e => renderError(res, e));
 });
@@ -459,12 +459,12 @@ app.get("/v1/products/directory/:paymentProductId", function (req, res) {
 });
 app.get("/v1/products/customerDetails/:paymentProductId/:fiscalNumber", function (req, res) {
   v1GetCustomerDetailsStub.values[0].value = req.params.fiscalNumber;
-  client.v1.products.customerDetails(merchantId, req.params.paymentProductId, v1GetCustomerDetailsStub, null)
+  client.v1.products.customerDetails(merchantId, req.params.paymentProductId, v1GetCustomerDetailsStub)
     .then(sdkResponse => renderResponse(res, sdkResponse))
     .catch(e => renderError(res, e));
 });
 app.get("/v1/products/deviceFingerprint/:paymentProductId", function (req, res) {
-  client.v1.products.deviceFingerprint(merchantId, req.params.paymentProductId, v1GetDeviceFingerprintStub, null)
+  client.v1.products.deviceFingerprint(merchantId, req.params.paymentProductId, v1GetDeviceFingerprintStub)
     .then(sdkResponse => renderResponse(res, sdkResponse))
     .catch(e => renderError(res, e));
 });
@@ -482,19 +482,19 @@ app.get("/v1/products/networks/:paymentProductId", function (req, res) {
     .catch(e => renderError(res, e));
 });
 app.get("/v1/products/sessions/:paymentProductId", function (req, res) {
-  client.v1.products.sessions(merchantId, req.params.paymentProductId, v1CreatePaymentProductSessionStub, null)
+  client.v1.products.sessions(merchantId, req.params.paymentProductId, v1CreatePaymentProductSessionStub)
     .then(sdkResponse => renderResponse(res, sdkResponse))
     .catch(e => renderError(res, e));
 });
 
 // v1 Risk assessments
 app.get("/v1/riskassessments/bankaccounts", function (req, res) {
-  client.v1.riskassessments.bankaccounts(merchantId, v1RiskAssessmentBankAccountStub, null)
+  client.v1.riskassessments.bankaccounts(merchantId, v1RiskAssessmentBankAccountStub)
     .then(sdkResponse => renderResponse(res, sdkResponse))
     .catch(e => renderError(res, e));
 });
 app.get("/v1/riskassessments/cards", function (req, res) {
-  client.v1.riskassessments.cards(merchantId, v1RiskAssessmentCardsStub, null)
+  client.v1.riskassessments.cards(merchantId, v1RiskAssessmentCardsStub)
     .then(sdkResponse => renderResponse(res, sdkResponse))
     .catch(e => renderError(res, e));
 });
@@ -514,12 +514,12 @@ app.get("/v1/services/convertAmount", function (req, res) {
     .catch(e => renderError(res, e));
 });
 app.get("/v1/services/bankaccount", function (req, res) {
-  client.v1.services.bankaccount(merchantId, v1ConvertBankAccountStub, null)
+  client.v1.services.bankaccount(merchantId, v1ConvertBankAccountStub)
     .then(sdkResponse => renderResponse(res, sdkResponse))
     .catch(e => renderError(res, e));
 });
 app.get("/v1/services/getIINdetails", function (req, res) {
-  client.v1.services.getIINdetails(merchantId, v1IINDetailsStub, null)
+  client.v1.services.getIINdetails(merchantId, v1IINDetailsStub)
     .then(sdkResponse => renderResponse(res, sdkResponse))
     .catch(e => renderError(res, e));
 });
@@ -537,24 +537,24 @@ app.get("/v1/services/privacypolicy", function (req, res) {
     .catch(e => renderError(res, e));
 });
 app.get("/v1/services/testconnection", function (req, res) {
-  client.v1.services.testconnection(merchantId, null)
+  client.v1.services.testconnection(merchantId)
     .then(sdkResponse => renderResponse(res, sdkResponse))
     .catch(e => renderError(res, e));
 });
 
 // v1 Tokens
 app.get("/v1/tokens/create", function (req, res) {
-  client.v1.tokens.create(merchantId, v1CreateTokenStub, null)
+  client.v1.tokens.create(merchantId, v1CreateTokenStub)
     .then(sdkResponse => renderResponse(res, sdkResponse))
     .catch(e => renderError(res, e));
 });
 app.get("/v1/tokens/get/:tokenId", function (req, res) {
-  client.v1.tokens.get(merchantId, req.params.tokenId, null)
+  client.v1.tokens.get(merchantId, req.params.tokenId)
     .then(sdkResponse => renderResponse(res, sdkResponse))
     .catch(e => renderError(res, e));
 });
 app.get("/v1/tokens/update/:tokenId", function (req, res) {
-  client.v1.tokens.update(merchantId, req.params.tokenId, v1UpdateTokenStub, null)
+  client.v1.tokens.update(merchantId, req.params.tokenId, v1UpdateTokenStub)
     .then(sdkResponse => renderResponse(res, sdkResponse))
     .catch(e => renderError(res, e));
 });
@@ -572,60 +572,60 @@ app.get("/v1/tokens/delete/:tokenId", function (req, res) {
     .catch(e => renderError(res, e));
 });
 app.get("/v1/tokens/approvesepadirectdebit/:tokenId", function (req, res) {
-  client.v1.tokens.approvesepadirectdebit(merchantId, req.params.tokenId, v1ApproveSepaDirectDebitTokenStub, null)
+  client.v1.tokens.approvesepadirectdebit(merchantId, req.params.tokenId, v1ApproveSepaDirectDebitTokenStub)
     .then(sdkResponse => renderResponse(res, sdkResponse))
     .catch(e => renderError(res, e));
 });
 
 // v1 Mandates
 app.get("/v1/mandates/create", function (req, res) {
-  client.v1.mandates.create(merchantId, v1CreateMandateStub, null)
+  client.v1.mandates.create(merchantId, v1CreateMandateStub)
     .then(sdkResponse => renderResponse(res, sdkResponse))
     .catch(e => renderError(res, e));
 });
 app.get("/v1/mandates/createWithMandateReference/:uniqueMandateReference", function (req, res) {
-  client.v1.mandates.createWithMandateReference(merchantId, req.params.uniqueMandateReference, v1CreateMandateWithReferenceStub, null)
+  client.v1.mandates.createWithMandateReference(merchantId, req.params.uniqueMandateReference, v1CreateMandateWithReferenceStub)
     .then(sdkResponse => renderResponse(res, sdkResponse))
     .catch(e => renderError(res, e));
 });
 app.get("/v1/mandates/get/:uniqueMandateReference", function (req, res) {
-  client.v1.mandates.get(merchantId, req.params.uniqueMandateReference, null)
+  client.v1.mandates.get(merchantId, req.params.uniqueMandateReference)
     .then(sdkResponse => renderResponse(res, sdkResponse))
     .catch(e => renderError(res, e));
 });
 app.get("/v1/mandates/block/:uniqueMandateReference", function (req, res) {
-  client.v1.mandates.block(merchantId, req.params.uniqueMandateReference, null)
+  client.v1.mandates.block(merchantId, req.params.uniqueMandateReference)
     .then(sdkResponse => renderResponse(res, sdkResponse))
     .catch(e => renderError(res, e));
 });
 app.get("/v1/mandates/unblock/:uniqueMandateReference", function (req, res) {
-  client.v1.mandates.unblock(merchantId, req.params.uniqueMandateReference, null)
+  client.v1.mandates.unblock(merchantId, req.params.uniqueMandateReference)
     .then(sdkResponse => renderResponse(res, sdkResponse))
     .catch(e => renderError(res, e));
 });
 app.get("/v1/mandates/revoke/:uniqueMandateReference", function (req, res) {
-  client.v1.mandates.revoke(merchantId, req.params.uniqueMandateReference, null)
+  client.v1.mandates.revoke(merchantId, req.params.uniqueMandateReference)
     .then(sdkResponse => renderResponse(res, sdkResponse))
     .catch(e => renderError(res, e));
 });
 
 // v1 Sessions
 app.get("/v1/sessions/create", function (req, res) {
-  client.v1.sessions.create(merchantId, v1CreateSessionStub, null)
+  client.v1.sessions.create(merchantId, v1CreateSessionStub)
     .then(sdkResponse => renderResponse(res, sdkResponse))
     .catch(e => renderError(res, e));
 });
 
 // v1 Installments
 app.get("/v1/installments/getInstallmentsInfo", function (req, res) {
-  client.v1.installments.getInstallmentsInfo(merchantId, v1GetInstallmentsInfoStub, null)
+  client.v1.installments.getInstallmentsInfo(merchantId, v1GetInstallmentsInfoStub)
     .then(sdkResponse => renderResponse(res, sdkResponse))
     .catch(e => renderError(res, e));
 });
 
 // v1 Files
 app.get("/v1/files/getFile/:fileId", function (req, res) {
-  client.v1.files.getFile(merchantId, req.params.fileId, null)
+  client.v1.files.getFile(merchantId, req.params.fileId)
     .then(sdkResponse => renderResponse(res, sdkResponse))
     .catch(e => renderError(res, e));
 });
