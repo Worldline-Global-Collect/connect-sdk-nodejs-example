@@ -24,6 +24,7 @@ var v1CapturePaymentStub = require("./stubs/v1/payments/capture.json");
 var v1RefundPaymentStub = require("./stubs/v1/payments/refund.json");
 var v1CreatePaymentDisputeStub = require("./stubs/v1/payments/dispute.json");
 var v1CreateRefundCaptureStub = require("./stubs/v1/captures/refund.json");
+var v1CreateCaptureDisputeStub = require("./stubs/v1/captures/dispute.json");
 var v1ApproveRefundStub = require("./stubs/v1/refunds/approve.json");
 var v1CreatePayoutStub = require("./stubs/v1/payouts/create.json");
 var v1ApprovePayoutStub = require("./stubs/v1/payouts/approve.json");
@@ -174,8 +175,16 @@ app.get("/v1/payments/find", function (req, res) {
     .catch(e => renderError(res, e));
 });
 app.get("/v1/payments/get/:paymentId", function (req, res) {
-  client.v1.payments.get(merchantId, req.params.paymentId)
-    .then(sdkResponse => renderResponse(res, sdkResponse))
+  // pass query parameters on as-is
+  var paymentContext = req.query;
+  // add some extra headers
+  var clientUserAgent = req.headers["user-agent"];
+  paymentContext.extraHeaders = [
+    { key: "X-GCS-ClientMetaInfo", value: clientUserAgent }
+  ];
+
+  client.v1.payments.get(merchantId, req.params.paymentId, paymentContext)
+    .then(sdkResponse => renderResponse(res, sdkResponse, paymentContext))
     .catch(e => renderError(res, e));
 });
 app.get("/v1/payments/complete/:paymentId", function (req, res) {
@@ -262,6 +271,16 @@ app.get("/v1/captures/get/:captureId", function (req, res) {
 });
 app.get("/v1/captures/refund/:captureId", function (req, res) {
   client.v1.captures.refund(merchantId, req.params.captureId, v1CreateRefundCaptureStub)
+    .then(sdkResponse => renderResponse(res, sdkResponse))
+    .catch(e => renderError(res, e));
+});
+app.get("/v1/captures/disputes/:captureId", function (req, res) {
+  client.v1.captures.disputes(merchantId, req.params.captureId)
+    .then(sdkResponse => renderResponse(res, sdkResponse))
+    .catch(e => renderError(res, e));
+});
+app.get("/v1/captures/dispute/:captureId", function (req, res) {
+  client.v1.captures.dispute(merchantId, req.params.captureId, v1CreateCaptureDisputeStub)
     .then(sdkResponse => renderResponse(res, sdkResponse))
     .catch(e => renderError(res, e));
 });

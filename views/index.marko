@@ -112,6 +112,8 @@
                   <ul class="list-group">
                     <li class="list-group-item"><a href="#" data-operation="v1GetCapture">Get capture</a></li>
                     <li class="list-group-item"><a href="#" data-operation="v1CreateRefundCapture">Create Refund</a></li>
+                    <li class="list-group-item"><a href="#" data-operation="v1GetCaptureDisputes">Get disputes</a></li>
+                    <li class="list-group-item"><a href="#" data-operation="v1CreateCaptureDispute">Create dispute</a></li>
                   </ul>
                 </div>
               </div>
@@ -426,7 +428,7 @@
         apiVersion: "v1",
         href: "/v1/payments/get",
         uriParameters: [ "paymentId" ],
-        queryParameters: [  ],
+        queryParameters: [ "returnOperations" ],
         formParameters: {  }
       };
       operations.v1CompletePayment = {
@@ -537,6 +539,20 @@
       operations.v1CreateRefundCapture = {
         apiVersion: "v1",
         href: "/v1/captures/refund",
+        uriParameters: [ "captureId" ],
+        queryParameters: [  ],
+        formParameters: {  }
+      };
+      operations.v1GetCaptureDisputes = {
+        apiVersion: "v1",
+        href: "/v1/captures/disputes",
+        uriParameters: [ "captureId" ],
+        queryParameters: [  ],
+        formParameters: {  }
+      };
+      operations.v1CreateCaptureDispute = {
+        apiVersion: "v1",
+        href: "/v1/captures/dispute",
         uriParameters: [ "captureId" ],
         queryParameters: [  ],
         formParameters: {  }
