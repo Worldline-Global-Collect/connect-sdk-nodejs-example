@@ -217,6 +217,11 @@ app.get("/v1/payments/capture/:paymentId", function (req, res) {
     .then(sdkResponse => renderResponse(res, sdkResponse))
     .catch(e => renderError(res, e));
 });
+app.get("/v1/payments/finalizecapture/:paymentId", function (req, res) {
+  client.v1.payments.finalizecapture(merchantId, req.params.paymentId)
+    .then(sdkResponse => renderResponse(res, sdkResponse))
+    .catch(e => renderError(res, e));
+});
 app.get("/v1/payments/cancelapproval/:paymentId", function (req, res) {
   client.v1.payments.cancelapproval(merchantId, req.params.paymentId)
     .then(sdkResponse => renderResponse(res, sdkResponse))

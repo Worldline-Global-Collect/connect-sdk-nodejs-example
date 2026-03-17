@@ -89,6 +89,7 @@
                     <li class="list-group-item"><a href="#" data-operation="v1ProcessChallengedPayment">Approves challenged payment</a></li>
                     <li class="list-group-item"><a href="#" data-operation="v1ApprovePayment">Approve payment</a></li>
                     <li class="list-group-item"><a href="#" data-operation="v1CapturePayment">Capture payment</a></li>
+                    <li class="list-group-item"><a href="#" data-operation="v1FinalizeCapture">Finalize capture</a></li>
                     <li class="list-group-item"><a href="#" data-operation="v1CancelApprovalPayment">Undo capture payment request</a></li>
                     <li class="list-group-item"><a href="#" data-operation="v1GetPaymentCaptures">Get captures of payment</a></li>
                     <li class="list-group-item"><a href="#" data-operation="v1RefundPayment">Create refund</a></li>
@@ -469,6 +470,13 @@
       operations.v1CapturePayment = {
         apiVersion: "v1",
         href: "/v1/payments/capture",
+        uriParameters: [ "paymentId" ],
+        queryParameters: [  ],
+        formParameters: {  }
+      };
+      operations.v1FinalizeCapture = {
+        apiVersion: "v1",
+        href: "/v1/payments/finalizecapture",
         uriParameters: [ "paymentId" ],
         queryParameters: [  ],
         formParameters: {  }
